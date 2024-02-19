@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'roboto-light';
+    src: url('./fonts/Roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-regular';
+    src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'roboto-thin';
+    src: url('./fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+    box-sizing: border-box; /* This ensures any padding or border are included in the element's total width and height */
+    color: white; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5), /* Semi-transparent black */
+        rgba(0, 0, 0, 0.5)
+    ), url(./images/rain.jpeg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensures the background is behind the content */
+}
+
+
+.content {
+    height: calc(100vh - 10em); /* Subtract the total vertical margin from the viewport height */
+    min-width: 70rem;
+    background-color: rgba(0, 0, 0, 0.802);
+    margin: 5rem 25rem; 
+    box-sizing: border-box; /* Include padding and border in the element's total dimensions */
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    border-radius: 20px; 
+    padding: 2rem; 
+}
+
+.leftbox, .upperWeather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leftbox {
+    gap: 1.8rem;
+}
+
+.searchbox {
+    display: flex;
+    border-bottom: 2px solid white;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem; 
+}
+
+
+#search {
+    font-size: 1rem;
+    border: none; 
+    outline: none;
+    box-shadow: none;
+    border-radius: 10px;
+    background-color: transparent;
+    height: 1.2rem;
+    width: 8rem; 
+    color: white; 
+    text-decoration: none;
+}
+
+#search::placeholder {
+    color: #e4e4e4;
+}
+
+#search-btn {
+    border: none;
+    background-image: url('./icons/magnifying-glass-svgrepo-com.svg'); /* Ensure the path is correct */
+    background-size: cover; /* Adjust as needed, could also be 'contain' or specific dimensions */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 1rem; /* Adjust based on the size of your icon */
+    height: 1rem; /* Adjust based on the size of your icon */
+    padding: 0; /* Remove padding */
+    display: inline-block; /* Adjust display to your needs */
+    background-color: transparent; /* Adjust background color as needed */
+}
+
+#search-btn:hover {
+    cursor: pointer;
+    transform: scale(1.09);
+}
+
+.weatherbox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    background-color: rgba(83, 83, 83, 0.42);
+    border-radius: 15px; 
+}
+
+.upperWeather {
+    margin-top: 2rem;
+    margin-left: 1.5rem; 
+    margin-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+.location {
+    font-size: 2rem;
+    font-family: 'roboto-light';
+}
+
+.temp {
+    font-size: 3.5rem;
+    font-family: 'roboto-regular';
+}
+
+.weather {
+    font-size: 1.5rem;
+    font-family: 'roboto-regular';
+    margin-top: -0.5rem;
+}
+
+.weatherText {
+    font-size: 0.8rem; 
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    text-align: center; /* Ensure text is centered if it wraps to a new line */
+    height: 100%; /* Adjust height as needed to fill the container */
+    font-family: 'roboto-light';
+}
+
+.lowerWeather {
+    margin-left: 1.5rem; 
+    margin-right: 1.5rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    gap: 2rem; 
+}
+
+.lowerBox {
+    background-color: rgba(0, 0, 0, 0.752);
+    height: 7.5rem;
+    width: 12rem; 
+    border-radius: 15px;
+    color: gray; 
+    font-family: 'roboto-light';
+}
+
+.lowerboxtitle, .lowerboxdata {
+    margin-left: 0.9rem; 
+    margin-top: 0.8rem; 
+}
+
+.lowerboxtitle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.lowerboxdata {
+    color: white;
+    font-size: 2rem;
+    margin-left: 1rem; 
+}
+
+.icon {
+    height: 1.5rem;
+}
