@@ -1,4 +1,6 @@
+import "./style.css";
 import { loadWeatherData, processWeatherData } from "./apiLogic";
+import { UI } from "./uiLogic";
 
 const form = document.querySelector(".weatherForm");
 const searchText = document.getElementById("search");
@@ -12,12 +14,17 @@ form.addEventListener("submit", (event) => {
       if (data) {
         // Check if data is not undefined due to catch block execution
         const weatherData = processWeatherData(data);
+        console.log(data);
 
-        const resultBox = document.createElement("div");
-        resultBox.classList.add("result");
-        resultBox.textContent = `${weatherData.temp} Celsius, Feels like: ${weatherData.feelsLike}`;
-
-        document.body.appendChild(resultBox);
+        UI.updateWeatherBox(
+          weatherData.location,
+          weatherData.temp,
+          weatherData.condition,
+          weatherData.feelsLike,
+          weatherData.precip,
+          weatherData.visibility,
+          weatherData.humidity,
+        );
       }
     })
     .catch((error) => {
