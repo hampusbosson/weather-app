@@ -17,8 +17,13 @@ async function loadWeatherData(location) {
 
 function processWeatherData(data) {
   const weatherData = {
-    temp: data.current.temp_c,
-    feelsLike: data.current.feelslike_c,
+    temp: `${data.current.temp_c}º`, 
+    feelsLike: `${data.current.feelslike_c}º`,
+    location: `${data.location.name}, ${data.location.country}`, 
+    condition: data.current.condition.text,
+    precip: `${data.current.precip_mm}mm`,
+    visibility: `${data.current.vis_km}km`,
+    humidity: `${data.current.humidity}%`
   };
 
   return weatherData;
