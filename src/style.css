@@ -20,6 +20,10 @@
 
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     max-height: 100vh;
@@ -45,13 +49,12 @@ body::before {
 
 
 .content {
-    height: calc(100vh - 10em); /* Subtract the total vertical margin from the viewport height */
-    min-width: 70rem;
+    min-height: 39rem; 
+    width: 60rem;
+    min-width: 50rem;
     background-color: rgba(0, 0, 0, 0.802);
     margin: 5rem 25rem; 
-    box-sizing: border-box; /* Include padding and border in the element's total dimensions */
-    display: grid;
-    grid-template-columns: 3fr 4fr;
+    display: flex;
     border-radius: 20px; 
     padding: 2rem; 
 }
@@ -60,10 +63,16 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 100%;
 }
 
 .leftbox {
     gap: 1.8rem;
+    
+}
+
+.rightbox {
+    width: 100%;
 }
 
 .searchbox {
@@ -110,13 +119,12 @@ body::before {
 }
 
 .weatherbox {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
     justify-content: space-between;
     background-color: rgba(83, 83, 83, 0.42);
     border-radius: 15px; 
+    height: 100%;
 }
 
 .upperWeather {
@@ -142,16 +150,35 @@ body::before {
     font-size: 1.5rem;
     font-family: 'roboto-regular';
     margin-top: -0.5rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 0.5rem;  
+    width: 100%;  
+    height: 3rem;
 }
 
-.weatherText {
-    font-size: 0.8rem; 
+#condition-image {
+    margin: 0;
+    padding: 0;
+    margin-left: -0.7rem; 
+    margin-top: 0.4rem;
+    height: 48px;
+    width: 48px;
+}
+
+.sun-data {
+    font-size: 1.2rem; 
     display: flex;
-    justify-content: center; /* Horizontally center the content */
+    justify-content: space-between; /* Horizontally center the content */
     align-items: center; /* Vertically center the content */
-    text-align: center; /* Ensure text is centered if it wraps to a new line */
-    height: 100%; /* Adjust height as needed to fill the container */
+    text-align: center;
+    height: 100%;
+    width: 60%; /* Adjust height as needed to fill the container */
     font-family: 'roboto-light';
+    color: rgb(255, 255, 255); 
+    font-family: 'roboto-light';
+    margin-top: 0.8rem;
 }
 
 .lowerWeather {
@@ -194,3 +221,4 @@ body::before {
 .icon {
     height: 1.5rem;
 }
+
