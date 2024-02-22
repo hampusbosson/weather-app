@@ -20,6 +20,7 @@ form.addEventListener("submit", (event) => {
           weatherData.location,
           weatherData.temp,
           weatherData.condition,
+          weatherData.conditionIcon,
           weatherData.feelsLike,
           weatherData.precip,
           weatherData.visibility,
