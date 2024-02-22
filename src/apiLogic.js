@@ -21,6 +21,7 @@ function processWeatherData(data) {
     feelsLike: `${data.current.feelslike_c}º`,
     location: `${data.location.name}, ${data.location.country}`, 
     condition: data.current.condition.text,
+    conditionIcon: data.current.condition.icon,
     precip: `${data.current.precip_mm}mm`,
     visibility: `${data.current.vis_km}km`,
     humidity: `${data.current.humidity}%`
