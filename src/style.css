@@ -41,7 +41,7 @@ body::before {
     background: linear-gradient(
         rgba(0, 0, 0, 0.5), /* Semi-transparent black */
         rgba(0, 0, 0, 0.5)
-    ), url(./images/rain.jpeg);
+    ), url(./images/360_F_555788037_n6RF7q04nuDvULl07N9snV4Vdo2yNbBC.jpg);
     background-size: cover;
     background-position: center;
     z-index: -1; /* Ensures the background is behind the content */
@@ -52,11 +52,13 @@ body::before {
     min-height: 39rem; 
     width: 60rem;
     min-width: 50rem;
-    background-color: rgba(0, 0, 0, 0.802);
+    background-color: rgba(41, 40, 40, 0.537);
     margin: 5rem 25rem; 
     display: flex;
+    flex-direction: row;
     border-radius: 20px; 
     padding: 2rem; 
+    gap: 2rem; 
 }
 
 .leftbox, .upperWeather {
@@ -66,13 +68,14 @@ body::before {
     max-height: 100%;
 }
 
-.leftbox {
-    gap: 1.8rem;
-    
+.rightbox {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
 }
 
-.rightbox {
-    width: 100%;
+.leftbox {
+    gap: 1.8rem;
 }
 
 .searchbox {
@@ -122,7 +125,7 @@ body::before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgba(83, 83, 83, 0.42);
+    background-color: rgba(30, 30, 30, 0.775);
     border-radius: 15px; 
     height: 100%;
 }
@@ -153,7 +156,7 @@ body::before {
     display: flex;
     justify-content: center; 
     align-items: center;
-    gap: 0.5rem;  
+    gap: 0.9rem;  
     width: 100%;  
     height: 3rem;
 }
@@ -193,12 +196,13 @@ body::before {
 }
 
 .lowerBox {
-    background-color: rgba(0, 0, 0, 0.752);
+    background-color: rgba(0, 0, 0, 0.637);
     height: 7.5rem;
     width: 12rem; 
     border-radius: 15px;
     color: gray; 
     font-family: 'roboto-light';
+    box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.77);
 }
 
 .lowerboxtitle, .lowerboxdata {
@@ -221,4 +225,90 @@ body::before {
 .icon {
     height: 1.5rem;
 }
+
+.hourlyForecast {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.8rem; 
+    background-color: black;
+    border-radius: 15px;
+    font-family: 'roboto-light';
+}
+
+.boxTitle {
+    color: gray; 
+}
+
+.hours-box {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding-bottom: 0.5rem; 
+}
+
+.hour-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; 
+    border-bottom: 1px solid gray;
+    padding-bottom: 0.6rem;
+}
+
+.i-hour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time {
+    font-size: 0.7rem;
+}
+
+.hour-temp {
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+}
+
+#hour-icon {
+    margin: 0;
+    padding: 0; 
+    height: 30px;
+    width: 30px;
+}
+
+.hours-box::-webkit-scrollbar-track {
+    background: #a5a5a5e2; /* Light grey background */
+    border-radius: 5px;
+}
+
+/* Styling the scrollbar thumb (the draggable element) */
+.hours-box::-webkit-scrollbar-thumb {
+    background: #5e5e5e; /* Dark grey thumb */
+    border-radius: 5px;
+}
+
+/* On hover effect for the scrollbar thumb */
+.hours-box::-webkit-scrollbar-thumb:hover {
+    background: #484848; /* Darker shade of grey on hover */
+}
+
+/* Styling the scrollbar itself (width and height) */
+.hours-box::-webkit-scrollbar {
+    height: 0.5rem; /* For horizontal scrollbars */
+}
+
+
+#clock-icon {
+    margin: 0;
+    padding: 0; 
+    height: 24px;
+    width: 24px;
+}
+
+
+
+
+
+
 
