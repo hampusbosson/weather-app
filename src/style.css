@@ -52,7 +52,7 @@ body::before {
     min-height: 39rem; 
     width: 60rem;
     min-width: 50rem;
-    background-color: rgba(41, 40, 40, 0.537);
+    background-color: rgba(41, 40, 40, 0.81);
     margin: 5rem 25rem; 
     display: flex;
     flex-direction: row;
@@ -71,7 +71,10 @@ body::before {
 .rightbox {
     display: flex;
     flex-direction: column;
+    gap: 2rem; 
     overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 3.2rem; 
 }
 
 .leftbox {
@@ -125,7 +128,7 @@ body::before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgba(30, 30, 30, 0.775);
+    background-color: rgba(0, 0, 0, 0.689);
     border-radius: 15px; 
     height: 100%;
 }
@@ -196,7 +199,7 @@ body::before {
 }
 
 .lowerBox {
-    background-color: rgba(0, 0, 0, 0.637);
+    background-color: rgb(0, 0, 0);
     height: 7.5rem;
     width: 12rem; 
     border-radius: 15px;
@@ -226,7 +229,7 @@ body::before {
     height: 1.5rem;
 }
 
-.hourlyForecast {
+.hourlyForecast, .dayForecast {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -243,11 +246,12 @@ body::before {
 .hours-box {
     display: flex;
     gap: 2rem;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: auto;
     padding-bottom: 0.5rem; 
 }
 
-.hour-header {
+
+.hour-header, .daily-header  {
     display: flex;
     align-items: center;
     gap: 0.4rem; 
@@ -270,32 +274,36 @@ body::before {
     margin-top: 0.3rem;
 }
 
-#hour-icon {
+#hour-icon, #daily-header-icon, #daily-icon {
     margin: 0;
     padding: 0; 
     height: 30px;
     width: 30px;
 }
 
-.hours-box::-webkit-scrollbar-track {
+.hours-box::-webkit-scrollbar-track, .daily-box::-webkit-scrollbar-track {
     background: #a5a5a5e2; /* Light grey background */
     border-radius: 5px;
 }
 
 /* Styling the scrollbar thumb (the draggable element) */
-.hours-box::-webkit-scrollbar-thumb {
+.hours-box::-webkit-scrollbar-thumb, .daily-box::-webkit-scrollbar-thumb {
     background: #5e5e5e; /* Dark grey thumb */
     border-radius: 5px;
 }
 
 /* On hover effect for the scrollbar thumb */
-.hours-box::-webkit-scrollbar-thumb:hover {
+.hours-box::-webkit-scrollbar-thumb:hover, .daily-box::-webkit-scrollbar-thumb:hover {
     background: #484848; /* Darker shade of grey on hover */
 }
 
 /* Styling the scrollbar itself (width and height) */
 .hours-box::-webkit-scrollbar {
     height: 0.5rem; /* For horizontal scrollbars */
+}
+
+.daily-box::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
 
@@ -305,6 +313,54 @@ body::before {
     height: 24px;
     width: 24px;
 }
+
+.daily-box {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 18rem;
+    padding-right: 1rem;
+}
+
+#i-daily {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem;
+}
+
+#i-daily-last {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem; 
+    border: none;
+}
+
+#i-daily-first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem; 
+    border-bottom: 1px solid gray;
+}
+
+.day {
+    width: 1px;
+}
+
+#daily-icon {
+    margin-right: 8rem; 
+}
+
+.daily-low-temp {
+    color: rgba(255, 255, 255, 0.701); 
+}
+
+
+
 
 
 
