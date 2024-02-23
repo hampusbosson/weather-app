@@ -1,3 +1,5 @@
+import { UI } from "./uiLogic";
+
 async function loadWeatherData(location) {
   try {
     const apiKey = "e3121ad0474b4ae09ea105530241802";
@@ -16,18 +18,26 @@ async function loadWeatherData(location) {
 }
 
 function processWeatherData(data) {
+  let currentHour = UI.getCurrentHour(); 
+
+  let sameDayHourlyData = data.forecast.forecastday[0].hour;
+  let nextDayHourlyData = data.forecast.forecastday[1].hour;
+  let combinedHourlyData = [...sameDayHourlyData, ...nextDayHourlyData]; 
+
   const weatherData = {
-    temp: `${data.current.temp_c}º`, 
-    feelsLike: `${data.current.feelslike_c}º`,
+    temp: `${Math.round(data.forecast.forecastday[0].hour[currentHour].temp_c)}º`, 
+    feelsLike: `${data.forecast.forecastday[0].hour[currentHour].feelslike_c}º`,
     location: `${data.location.name}, ${data.location.country}`, 
-    condition: data.current.condition.text,
-    conditionIcon: data.current.condition.icon,
-    precip: `${data.current.precip_mm}mm`,
-    visibility: `${data.current.vis_km}km`,
-    humidity: `${data.current.humidity}%`
+    condition: data.forecast.forecastday[0].hour[currentHour].condition.text,
+    conditionIcon: data.forecast.forecastday[0].hour[currentHour].condition.icon,
+    precip: `${data.forecast.forecastday[0].hour[currentHour].precip_mm}mm`,
+    visibility: `${data.forecast.forecastday[0].hour[currentHour].vis_km}km`,
+    humidity: `${data.forecast.forecastday[0].hour[currentHour].humidity}%`,
+    hourlyData: combinedHourlyData
   };
 
   return weatherData;
 }
+
 
 export { loadWeatherData, processWeatherData };

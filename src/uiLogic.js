@@ -1,3 +1,5 @@
+import { format } from "date-fns"; 
+
 const UI = (() => {
   const displayLogic = {
     locationText: document.querySelector(".location"),
@@ -8,6 +10,7 @@ const UI = (() => {
     precipText: document.getElementById("precip"),
     visibilityText: document.getElementById("visibility"),
     humidityText: document.getElementById("humidity"),
+    hourBoxes: document.querySelectorAll(".i-hour")
   };
 
   const clearWeatherContent = () => {
@@ -19,6 +22,9 @@ const UI = (() => {
     displayLogic.visibilityText.textContent = "";
     displayLogic.humidityText.textContent = "";
     displayLogic.conditionIcon.src = ""; 
+    displayLogic.hourBoxes.forEach((hour) => {
+      hour.childNodes.textContent = ""; 
+    });
   };
 
   const setConditionIcon = function(conditionIcon) {
@@ -48,7 +54,37 @@ const UI = (() => {
     setConditionIcon(conditionIcon);
 
   };
-  return { updateWeatherBox };
+
+  const getCurrentHour = () => {
+    let now = new Date(); 
+    let currentHour = now.getHours(); 
+    
+    return currentHour; 
+  }
+
+  const updateHourBoxes = function(hourData) {
+    let i = getCurrentHour(); 
+
+    displayLogic.hourBoxes.forEach((hour) => {
+      let time = hour.querySelector('.time'); 
+      let temp = hour.querySelector('.hour-temp'); 
+      let hourIcon = hour.querySelector('#hour-icon');
+
+      let dateTimeString = hourData[i].time; // Get the full date-time string
+      let timeString = dateTimeString.split(' ')[1]; // Split by space and take the second element
+
+      let roundedTemp = Math.round(hourData[i].temp_c);
+
+      time.textContent = timeString;
+      temp.textContent = `${roundedTemp}º`;
+      hourIcon.src = hourData[i].condition.icon;
+
+      i++; 
+    })
+  }
+
+
+  return { updateWeatherBox, updateHourBoxes, getCurrentHour };
 })();
 
 export { UI };

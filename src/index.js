@@ -26,6 +26,8 @@ form.addEventListener("submit", (event) => {
           weatherData.visibility,
           weatherData.humidity,
         );
+
+        UI.updateHourBoxes(weatherData.hourlyData); 
       }
     })
     .catch((error) => {
