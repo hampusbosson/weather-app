@@ -74,7 +74,7 @@ const UI = (() => {
       let hourIcon = hour.querySelector("#hour-icon");
 
       if (i === getCurrentHour()) {
-        time.textContent = 'Now'; 
+        time.textContent = "Now";
       } else {
         let dateTimeString = hourData[i].time; // Get the full date-time string
         let timeString = dateTimeString.split(" ")[1]; // Split by space and take the second element
@@ -102,21 +102,14 @@ const UI = (() => {
       if (i === 0) {
         dayText.textContent = "Today";
       } else {
-        let formatDate = format(
-          new Date(dailyData[i].date),
-          "EEE",
-        );
+        let formatDate = format(new Date(dailyData[i].date), "EEE");
         dayText.textContent = formatDate;
       }
 
       icon.src = dailyData[i].day.condition.icon;
-      let roundedMinTemp = Math.round(
-        dailyData[i].day.mintemp_c,
-      );
+      let roundedMinTemp = Math.round(dailyData[i].day.mintemp_c);
       lowTemp.textContent = `${roundedMinTemp}º`;
-      let roundedMaxTemp = Math.round(
-        dailyData[i].day.maxtemp_c,
-      );
+      let roundedMaxTemp = Math.round(dailyData[i].day.maxtemp_c);
       highTemp.textContent = `${roundedMaxTemp}º`;
 
       i++;

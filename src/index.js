@@ -11,6 +11,6 @@ form.addEventListener("submit", (event) => {
   loadData(location);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadData('Stockholm');
+document.addEventListener("DOMContentLoaded", () => {
+  loadData("Stockholm");
 });
