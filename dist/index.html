@@ -1,1 +1,255 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title></head><body><div>hello world</div><script defer="defer" src="bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" href="icons/weather/64x64/day/116.png"></head>
+</head>
+<body>
+    <div class="content">
+        <div class="leftbox">
+            <div class="searchbox">
+                <form class="weatherForm">
+                    <input type="text" placeholder="Search Location" id="search">
+                    <button type="submit" id="search-btn"></button>
+                </form>
+            </div>
+            <div class="weatherbox">
+                <div class="upperWeather">
+                    <div class="location"></div>
+                    <div class="temp"></div>
+                    <div class="weather">
+                        <div class="weather-text"></div> 
+                        <div class="weather-icon"><img src="" id="condition-image"></div>
+                    </div>
+                </div>
+                <div class="lowerWeather">
+                    <div class="lowerBox"> 
+                        <div class="lowerboxtitle">
+                            <img src="./icons/temperature-list-svgrepo-com.svg"class="icon">FEELS LIKE
+                        </div>
+                        <div class="lowerboxdata" id="feels-like"></div>
+                    </div>
+                    <div class="lowerBox"> 
+                        <div class="lowerboxtitle">
+                            <img src="./icons/rain-drop-svgrepo-com.svg" class="icon">PRECIPITATION
+                        </div>
+                        <div class="lowerboxdata" id="precip"></div>
+                    </div>
+                    <div class="lowerBox"> 
+                        <div class="lowerboxtitle">
+                            <img src="./icons/wind-svgrepo-com.svg" class="icon">WIND SPEED
+                        </div>
+                        <div class="lowerboxdata" id="visibility"></div>
+                    </div>
+                    <div class="lowerBox"> 
+                        <div class="lowerboxtitle">
+                            <img src="./icons/humidity-svgrepo-com.svg" class="icon">HUMIDITY
+                        </div>
+                        <div class="lowerboxdata" id="humidity"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightbox">
+            <div class="hourlyForecast">
+                <div class="hour-header">
+                    <div class="hour-header-icon"><img src="icons/clock-svgrepo-com.svg" id="clock-icon"></div>
+                    <div class="boxTitle">HOURLY FORECAST</div>
+                </div>
+                <div class="hours-box">
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"> <img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                    <div class="i-hour">
+                        <div class="time"></div>
+                        <div class="hour-temp"></div>
+                        <div class="hour-icon"><img src="" id="hour-icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dayForecast">
+                <div class="daily-header">
+                    <div class="daily-header-icon"><img src="icons/calendar-svgrepo-com.svg" id="daily-header-icon"></div>
+                    <div class="boxTitle">10-DAY FORECAST</div>
+                </div>
+                <div class="daily-box">
+                    <div class="i-daily" id="i-daily-first">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>        
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                    <div class="i-daily" id="i-daily-last">
+                        <div class="day"></div>
+                        <div class="daily-icon"><img src="" id="daily-icon"></div>
+                        <div class="daily-low-temp"></div>
+                        <div class="daily-high-temp"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script defer src="bundle.js"></script></body>
+</html>
