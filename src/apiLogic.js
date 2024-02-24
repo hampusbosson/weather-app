@@ -3,7 +3,7 @@ import { UI } from "./uiLogic";
 async function loadWeatherData(location) {
   try {
     const apiKey = "e3121ad0474b4ae09ea105530241802";
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${encodeURIComponent(location)}&days=10&aqi=no&alerts=no`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${encodeURIComponent(location)}&days=10&aqi=no&alerts=no`;
 
     const response = await fetch(url, { mode: "cors" });
     if (!response.ok) {
