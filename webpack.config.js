@@ -41,7 +41,8 @@ module.exports = {
     new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
-        inject: 'body'
+        inject: 'body',
+        favicon: './src/icons/weather/64x64/day/116.png'
     }),
     new CopyPlugin({
       patterns: [
