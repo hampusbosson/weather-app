@@ -42,7 +42,7 @@ const UI = (() => {
     conditionIcon,
     feelsLike,
     precip,
-    visibility,
+    windSpeed,
     humidity,
   ) {
     clearWeatherContent();
@@ -52,7 +52,7 @@ const UI = (() => {
     displayLogic.weatherText.textContent = condition;
     displayLogic.feelslikeText.textContent = feelsLike;
     displayLogic.precipText.textContent = precip;
-    displayLogic.visibilityText.textContent = visibility;
+    displayLogic.visibilityText.textContent = windSpeed;
     displayLogic.humidityText.textContent = humidity;
 
     setConditionIcon(conditionIcon);
@@ -83,7 +83,7 @@ const UI = (() => {
 
       let roundedTemp = Math.round(hourData[i].temp_c);
       temp.textContent = `${roundedTemp}º`;
-      
+
       hourIcon.src = hourData[i].condition.icon;
 
       i++;

@@ -6,6 +6,7 @@ function loadData(location) {
     if (data) {
       // Check if data is not undefined due to catch block execution
       const weatherData = processWeatherData(data);
+      console.log(data); 
 
       UI.updateWeatherBox(
         weatherData.location,
@@ -14,7 +15,7 @@ function loadData(location) {
         weatherData.conditionIcon,
         weatherData.feelsLike,
         weatherData.precip,
-        weatherData.visibility,
+        weatherData.windSpeed,
         weatherData.humidity,
       );
 
@@ -58,8 +59,8 @@ function processWeatherData(data) {
     location: `${data.location.name}, ${data.location.country}`, 
     condition: data.forecast.forecastday[0].hour[currentHour].condition.text,
     conditionIcon: data.forecast.forecastday[0].hour[currentHour].condition.icon,
-    precip: `${data.forecast.forecastday[0].hour[currentHour].precip_mm}mm`,
-    visibility: `${data.forecast.forecastday[0].hour[currentHour].vis_km}km`,
+    precip: `${data.forecast.forecastday[0].hour[currentHour].precip_mm} mm`,
+    windSpeed: `${data.forecast.forecastday[0].hour[currentHour].wind_kph} km/h`,
     humidity: `${data.forecast.forecastday[0].hour[currentHour].humidity}%`,
     hourlyData: combinedHourlyData,
     dailyData: data.forecast.forecastday
