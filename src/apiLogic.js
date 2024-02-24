@@ -33,7 +33,8 @@ function processWeatherData(data) {
     precip: `${data.forecast.forecastday[0].hour[currentHour].precip_mm}mm`,
     visibility: `${data.forecast.forecastday[0].hour[currentHour].vis_km}km`,
     humidity: `${data.forecast.forecastday[0].hour[currentHour].humidity}%`,
-    hourlyData: combinedHourlyData
+    hourlyData: combinedHourlyData,
+    dailyData: data.forecast.forecastday
   };
 
   return weatherData;

@@ -28,6 +28,7 @@ form.addEventListener("submit", (event) => {
         );
 
         UI.updateHourBoxes(weatherData.hourlyData); 
+        UI.updateDailyBoxes(weatherData.dailyData);
       }
     })
     .catch((error) => {
