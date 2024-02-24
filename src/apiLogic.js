@@ -1,5 +1,33 @@
 import { UI } from "./uiLogic";
 
+function loadData(location) {
+  loadWeatherData(location)
+  .then((data) => {
+    if (data) {
+      // Check if data is not undefined due to catch block execution
+      const weatherData = processWeatherData(data);
+
+      UI.updateWeatherBox(
+        weatherData.location,
+        weatherData.temp,
+        weatherData.condition,
+        weatherData.conditionIcon,
+        weatherData.feelsLike,
+        weatherData.precip,
+        weatherData.visibility,
+        weatherData.humidity,
+      );
+
+      UI.updateHourBoxes(weatherData.hourlyData); 
+      UI.updateDailyBoxes(weatherData.dailyData);
+    }
+  })
+  .catch((error) => {
+    // This catch is for handling any errors that might not have been caught by the try/catch inside loadWeatherData
+    console.error("Error processing weather data:", error);
+  });
+}
+
 async function loadWeatherData(location) {
   try {
     const apiKey = "e3121ad0474b4ae09ea105530241802";
@@ -41,4 +69,4 @@ function processWeatherData(data) {
 }
 
 
-export { loadWeatherData, processWeatherData };
+export { loadWeatherData, processWeatherData, loadData };
