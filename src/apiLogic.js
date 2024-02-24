@@ -13,7 +13,7 @@ async function loadWeatherData(location) {
     return data;
   } catch (error) {
     console.error("Fetching weather data failed:", error);
-    alert("Something went wrong: " + error.message);
+    alert("Location not found, please enter a valid city or country.");
   }
 }
 
