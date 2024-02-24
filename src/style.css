@@ -39,9 +39,9 @@ body::before {
     right: 0;
     bottom: 0;
     background: linear-gradient(
-        rgba(0, 0, 0, 0.5), /* Semi-transparent black */
-        rgba(0, 0, 0, 0.5)
-    ), url(./images/360_F_555788037_n6RF7q04nuDvULl07N9snV4Vdo2yNbBC.jpg);
+        rgba(0, 0, 0, 0.1), /* Semi-transparent black */
+        rgba(0, 0, 0, 0.1)
+    ), url(./images/be65a5e7-78bd-439e-a08f-8b7cfa9c8b22.webp);
     background-size: cover;
     background-position: center;
     z-index: -1; /* Ensures the background is behind the content */
@@ -52,11 +52,11 @@ body::before {
     min-height: 41rem; 
     width: 60rem;
     min-width: 50rem;
-    background-color: rgba(32, 32, 32, 0.608);
+    background-color: rgba(76, 76, 76, 0.659);
     margin: 5rem 25rem; 
     display: flex;
     flex-direction: row;
-    border-radius: 20px; 
+    border-radius: 15px; 
     padding: 2rem; 
     gap: 2rem; 
 }
